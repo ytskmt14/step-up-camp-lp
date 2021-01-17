@@ -1,28 +1,46 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar app color="primary" dark>
+      <Header></Header>
+    </v-app-bar>
+
+    <v-main>
+      <Top></Top>
+      <About></About>
+      <Works></Works>
+      <Features></Features>
+      <JoinUs></JoinUs>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+const Header = () => import(/* webpackChunkName: "Header" */ './components/section/Header.vue');
+const Top = () => import(/* webpackChunkName: "Top" */ './components/section/Top.vue');
+const About = () => import(/* webpackChunkName: "About" */ './components/section/About.vue');
+const Works = () => import(/* webpackChunkName: "Works" */ './components/section/Works.vue');
+const JoinUs = () => import(/* webpackChunkName: "JoinUs" */ './components/section/JoinUs.vue');
+const Features = () => import(/* webpackChunkName: "Features" */'./components/section/Features.vue');
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
-  }
-}
+    Header,
+    Top,
+    About,
+    Works,
+    JoinUs,
+    Features,
+  },
+
+  data: () => ({
+  }),
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.section {
+  height: 550px;
 }
 </style>
