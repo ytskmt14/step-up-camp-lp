@@ -1,22 +1,7 @@
 <template>
   <div id="about" class="section">
     <v-container>
-      <v-row
-        justify="center"
-        align="start"
-      >
-        <v-col
-          align="start"
-          md="4"
-        >
-          <div class="text-center text-h4 font-weight-bold">
-            ABOUT
-          </div>
-          <div class="text-center text-h7 ">
-            ステキャンについて
-          </div>
-        </v-col>
-      </v-row>
+      <SectionHeader :title="title" :subTitle="subTitle"/>
       <v-row
         justify="center"
         align="start"
@@ -48,9 +33,16 @@
 </template>
 
 <script>
+const SectionHeader = () => import(/** webpackChunkName: "SectionHeader" */ '../module/SectionHeader.vue');
+
 export default {
+  components: {
+    SectionHeader
+  },
   data () {
     return {
+      title: "About",
+      subTitle: "ステキャンについて",
       pastThemeList: [
         "情報セキュリティきほんの「き」",
         "RUBY ON RAILS!!",

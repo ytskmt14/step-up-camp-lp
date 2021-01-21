@@ -41,6 +41,6 @@ export default {
 
 <style>
 .section {
-  height: 550px;
+  height: 700px;
 }
 </style>
