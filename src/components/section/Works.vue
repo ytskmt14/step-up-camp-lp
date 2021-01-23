@@ -22,7 +22,12 @@
       </v-row>
       <v-row style="height: 200px;">
         <v-col md="8" offset-md="2">
-          <v-slide-group v-model="model" show-arrows>
+          <v-slide-group
+            v-model="model"
+            prev-icon="mdi-arrow-left-circle"
+            next-icon="mdi-arrow-right-circle"
+            show-arrows
+            >
             <v-slide-item
               v-for="n in work.length"
               :key="n"
@@ -72,6 +77,35 @@ export default {
           imgPath: require("../..//assets/work2.jpg"),
           thumbImgPath: require("../../assets/thumb-work2.jpg"),
         },
+        {
+          id: 3,
+          title: "sample title",
+          text: "sample text.",
+          imgPath: require("../../assets/work1.jpg"),
+          thumbImgPath: require("../../assets/thumb-work1.jpg"),
+        },
+        {
+          id: 4,
+          title: "sample title",
+          text: "sample text.",
+          imgPath: require("../../assets/work2.jpg"),
+          thumbImgPath: require("../../assets/thumb-work2.jpg"),
+        },
+        {
+          id: 5,
+          title: "sample title",
+          text: "sample text.",
+          imgPath: require("../../assets/work1.jpg"),
+          thumbImgPath: require("../../assets/thumb-work1.jpg"),
+        },
+        {
+          id: 6,
+          title: "sample title",
+          text: "sample text.",
+          imgPath: require("../../assets/work2.jpg"),
+          thumbImgPath: require("../../assets/thumb-work2.jpg"),
+        },
+
       ]
     }
   },
@@ -79,6 +113,6 @@ export default {
     onCardClick(n) {
       this.model = n;
     }
-  }
+  },
 }
 </script>
