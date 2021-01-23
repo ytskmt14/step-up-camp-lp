@@ -3,14 +3,14 @@
     <v-col md="6" class="feature-content-area" :style="bgStyle">
       <v-row no-gutters>
         <v-col md="8" offset-md="4" >
-          <slot name="leftContent"></slot>
+          <slot name="overview"></slot>
         </v-col>
       </v-row>
     </v-col>
     <v-col md="6" class="feature-content-area" :style="bgStyle">
       <v-row no-gutters>
         <v-col md="8">
-          <slot name="rightContent"></slot>
+          <slot name="description"></slot>
         </v-col>
       </v-row>
     </v-col>
