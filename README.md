@@ -1,24 +1,30 @@
-# step-up-camp-lp
+LP FOR STEP UP CAMP
+====
 
-## Project setup
-```
-yarn install
-```
+## Description
+2021ステキャンモノづくり第一弾！
+ステキャンのランディングページを作ってみよう！のプロジェクトです。
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Demo
+TBA...
+## Requirement
+* Node.js：v15.4.0
+* Vue CLI：v4.5.1
+## Install
 
-### Compiles and minifies for production
+```sh
+# 本リポジトリのクローン
+$ git clone https://github.com/ytskmt14/step-up-camp-lp.git
+$ cd step-up-camp-lp
+# 必要なライブラリ等をインストール
+$ npm install
+(or $ yarn install)
+# 開発サーバの起動
+$ npm run serve
+(or $ yarn serve)
 ```
-yarn build
-```
+## Contribution
+TBD..
+## Author
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[ytskmt14](https://github.com/ytskmt14)
