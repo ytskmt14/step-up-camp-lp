@@ -1,23 +1,23 @@
 <template>
-<div id="top" class="section">
-  <v-container fill-height>
+<section id="top" class="section">
+  <v-container fluid fill-height>
     <v-row justify="center">
       <v-col align-self="center" md="6">
-        <div class="text-center text-h2 font-weight-black top-text">STEP UP CAMP</div>
-        <div class="text-center text-h5 font-weight-black top-text">Pioneer Soft Self Study Group.</div>
+        <div class="text-center text-h1 font-weight-black top-text">STEP UP CAMP</div>
+        <div class="text-center text-h4 font-weight-black top-text">Pioneer Soft Self Study Group.</div>
       </v-col>
     </v-row>
   </v-container>
-</div>
+</section>
 </template>
 
 <style scoped>
 #top {
-  background-image: url("~@/assets/top-sample.jpg");
+  background-image: url("~@/assets/top-img.png");
   background-size: cover;
 }
 
 .top-text {
-  color: #f7f1f0;
+  color: #0d0b10;
 }
 </style>

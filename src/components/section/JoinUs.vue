@@ -1,5 +1,5 @@
 <template>
-  <div id="joinUs" class="section">
+  <section id="joinUs" class="section">
     <v-container fluid>
       <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
       <v-row class="text-center">
@@ -28,7 +28,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </section>
 </template>
 <script>
 import SectionHeader from "../module/SectionHeader.vue";

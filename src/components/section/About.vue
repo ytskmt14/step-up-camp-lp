@@ -1,5 +1,5 @@
 <template>
-  <div id="about" class="section">
+  <section id="about" class="section">
     <v-container>
       <SectionHeader :title="title" :subTitle="subTitle"/>
       <v-row
@@ -79,7 +79,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </section>
 </template>
 
 <script>

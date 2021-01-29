@@ -1,33 +1,27 @@
 <template>
-  <div id="features" class="section">
+  <section id="features" class="section">
     <v-container>
       <SectionHeader class="mb-5" :title="title" :subTitle="subTitle"/>
-      <FeaturesContent bgColor="#dfa84e">
+      <FeaturesContent
+        v-for="feature in featureList"
+        :key="feature.id"
+        :bgColor="feature.bgColor"
+      >
         <template v-slot:overview>
-          <FeaturesContentOverview :feature="'feature1'" />
+          <FeaturesContentOverview
+            :shortDescription="feature.shortDescription"
+          />
         </template>
         <template v-slot:description>
-          <FeaturesContentDescription color="#dfa84e" :title="'特徴①'" :description="'説明文'"/>
-        </template>
-      </FeaturesContent>
-      <FeaturesContent bgColor="#3caab2">
-        <template v-slot:overview>
-          <FeaturesContentOverview :feature="'feature2'" />
-        </template>
-        <template v-slot:description>
-          <FeaturesContentDescription color="#3caab2" :title="'特徴②'" :description="'説明文'"/>
-        </template>
-      </FeaturesContent>
-      <FeaturesContent bgColor="#0a1326">
-        <template v-slot:overview>
-          <FeaturesContentOverview :feature="'feature3'" />
-        </template>
-        <template v-slot:description>
-          <FeaturesContentDescription color="#0a1326" :title="'特徴③'" :description="'説明文'"/>
+          <FeaturesContentDescription
+            :color="feature.bgColor"
+            :shortDescription="feature.shortDescription"
+            :description="feature.description"
+          />
         </template>
       </FeaturesContent>
     </v-container>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -47,6 +41,23 @@ export default {
     return {
       title: "FEATURES",
       subTitle: "特徴紹介",
+      featureList: [
+        {
+          bgColor: '#dfa84e',
+          shortDescription: 'feature1',
+          description: '説明文１',
+        },
+        {
+          bgColor: '#3caab2',
+          shortDescription: 'feature2',
+          description: '説明文２',
+        },
+        {
+          bgColor: '#0a1326',
+          shortDescription: 'feature3',
+          description: '説明文３',
+        },
+      ]
     }
   }
 }

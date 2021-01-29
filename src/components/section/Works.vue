@@ -1,53 +1,47 @@
 <template>
-  <div id="works" class="section">
-    <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
-    <v-sheet>
-      <v-row style="height: 400px;">
-        <v-col md="3" offset-md="2" >
-          <v-card flat style="height: 100%;">
-            <v-card-title>
-              {{ work[model - 1].title }}
-            </v-card-title>
-            <v-card-text>
-              {{ work[model - 1].text }}
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col md="5">
-          <v-img
-            :src="work[model - 1].imgPath"
-            max-height="375px"
-          />
-        </v-col>
-      </v-row>
-      <v-row style="height: 200px;">
-        <v-col md="8" offset-md="2">
-          <v-slide-group
-            v-model="model"
-            prev-icon="mdi-arrow-left-circle"
-            next-icon="mdi-arrow-right-circle"
-            show-arrows
+  <section id="works" class="section">
+    <v-container>
+      <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
+      <v-sheet>
+        <v-row style="height: 400px">
+          <v-col md="3" offset-md="2">
+            <v-card flat style="height: 100%">
+              <v-card-title>
+                {{ work[model - 1].title }}
+              </v-card-title>
+              <v-card-text>
+                {{ work[model - 1].text }}
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col md="5">
+            <v-img :src="work[model - 1].imgPath" max-height="375px" />
+          </v-col>
+        </v-row>
+        <v-row style="height: 200px">
+          <v-col md="8" offset-md="2">
+            <v-slide-group
+              v-model="model"
+              prev-icon="mdi-arrow-left-circle"
+              next-icon="mdi-arrow-right-circle"
+              show-arrows
             >
-            <v-slide-item
-              v-for="n in work.length"
-              :key="n"
-            >
-              <v-sheet
-                class="ma-4"
-              >
-                <v-img
-                  contain
-                  :src="work[n - 1].thumbImgPath"
-                  max-height="175px;"
-                  @click="onCardClick(n)"
-                />
-              </v-sheet>
-            </v-slide-item>
-          </v-slide-group>
-        </v-col>
-      </v-row>
-    </v-sheet>
-  </div>
+              <v-slide-item v-for="n in work.length" :key="n">
+                <v-sheet class="ma-4">
+                  <v-img
+                    contain
+                    :src="work[n - 1].thumbImgPath"
+                    max-height="175px;"
+                    @click="onCardClick(n)"
+                  />
+                </v-sheet>
+              </v-slide-item>
+            </v-slide-group>
+          </v-col>
+        </v-row>
+      </v-sheet>
+    </v-container>
+  </section>
 </template>
 
 <script>
@@ -57,7 +51,7 @@ export default {
   components: {
     SectionHeader,
   },
-  data() {
+  data () {
     return {
       title: "WORKS",
       subTitle: "実績紹介",
@@ -110,7 +104,7 @@ export default {
     }
   },
   methods: {
-    onCardClick(n) {
+    onCardClick (n) {
       this.model = n;
     }
   },
