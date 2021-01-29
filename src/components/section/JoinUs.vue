@@ -13,7 +13,7 @@
           :key="item.subheading"
           class="joinus-column"
           :style="item.style"
-           >
+        >
           <v-row class="joinus-column-wrapper" :style="item.substyle">
             <v-col cols="12" class="icon-space">
               <v-icon color="white" class="icon" :size="item.size">
@@ -37,7 +37,7 @@ export default {
   components: {
     SectionHeader,
   },
-  data() {
+  data () {
     return {
       title: "JOIN US",
       subTitle: "メンバー募集",
@@ -89,7 +89,7 @@ export default {
 }
 .joinus-column-wrapper {
   max-width: 240px;
-  height:430px;
+  height: 430px;
 }
 .joinus-column-text {
   height: 50%;

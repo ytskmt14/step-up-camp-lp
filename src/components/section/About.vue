@@ -100,12 +100,12 @@ export default {
         "Slack活用術",
         "Django入門",
         "etc...",
-        ],
-        history: [
-          {
+      ],
+      history: [
+        {
 
-          }
-        ]
+        }
+      ]
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <section id="features" class="section">
     <v-container>
-      <SectionHeader class="mb-5" :title="title" :subTitle="subTitle"/>
+      <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
       <FeaturesContent
         v-for="feature in featureList"
         :key="feature.id"
