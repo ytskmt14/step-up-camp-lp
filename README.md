@@ -24,8 +24,8 @@ $ npm install
 $ npm run serve
 (or $ yarn serve)
 ```
-## Contribution
-TBD..
+
 ## Author
 
 [ytskmt14](https://github.com/ytskmt14)
+[suzaki-kana](https://github.com/suzaki-kana)
