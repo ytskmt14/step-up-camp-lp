@@ -1,25 +1,21 @@
 <template>
   <section id="features" class="section">
-    <v-container fluid>
-      <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
-      <FeaturesContent
-        v-for="feature in featureList"
-        :key="feature.id"
-        :bgColor="feature.bgColor"
-      >
-        <template v-slot:overview>
-          <FeaturesContentOverview
-            :shortDescription="feature.shortDescription"
-          />
-        </template>
-        <template v-slot:description>
-          <FeaturesContentDescription
-            :color="feature.bgColor"
-            :description="feature.description"
-          />
-        </template>
-      </FeaturesContent>
-    </v-container>
+    <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
+    <FeaturesContent
+      v-for="feature in featureList"
+      :key="feature.id"
+      :bgColor="feature.bgColor"
+    >
+      <template v-slot:overview>
+        <FeaturesContentOverview :shortDescription="feature.shortDescription" />
+      </template>
+      <template v-slot:description>
+        <FeaturesContentDescription
+          :color="feature.bgColor"
+          :description="feature.description"
+        />
+      </template>
+    </FeaturesContent>
   </section>
 </template>
 
