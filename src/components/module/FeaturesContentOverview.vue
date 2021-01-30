@@ -17,14 +17,15 @@
     </v-row>
     <v-row>
       <v-col
+          cols="12"
           align="center"
       >
         <v-banner
           color="white"
-          tile
-          outlined
+          single-line
+          class="mt-6"
         >
-          {{ feature }}
+          {{ shortDescription }}
         </v-banner>
       </v-col>
     </v-row>
@@ -34,7 +35,7 @@
 <script>
 export default {
   props: {
-    feature: {
+    shortDescription: {
       type: String,
       default: "Feature",
     }

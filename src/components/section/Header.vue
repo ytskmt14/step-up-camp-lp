@@ -5,21 +5,19 @@
         <v-btn
           href="#top"
           text
-          v-smooth-scroll="{duration: 1000, offset: -75}"
+          v-smooth-scroll="{ duration: 1000, offset: -75 }"
         >
           Step up camp
         </v-btn>
       </v-col>
       <v-spacer></v-spacer>
-      <v-col
-        align-self="center"
-      >
+      <v-col align-self="center">
         <a
           class="text-center"
           v-for="(section, index) in sectionList"
           :key="index"
           :href="section.id"
-          v-smooth-scroll="{duration: 1000, offset: -75}"
+          v-smooth-scroll="{ duration: 1000, offset: -75 }"
         >
           {{ section.name }}
         </a>

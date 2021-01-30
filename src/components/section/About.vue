@@ -1,35 +1,85 @@
 <template>
-  <div id="about" class="section">
+  <section id="about" class="section">
     <v-container>
       <SectionHeader :title="title" :subTitle="subTitle"/>
       <v-row
+        class="mt-5"
         justify="center"
-        align="start"
       >
         <v-col
-          align="start"
           md="8"
         >
-          <div class="mt-5 text-left text-body-2">
-            <p>ステキャンとは、ステップアップキャンプの略称です。</p>
-            <p>それぞれが興味のあることや勉強したことなどをみんなに共有していく場として、2019年10月からスタートしました。</p>
-            <p>
-              発表のテーマは、業務に関係あることでもないことでもなんでもOK！
-              過去にはこんなテーマがありました。
-            </p>
-            <ul class="about-list">
-              <li
-                v-for="(pastTheme, index) in pastThemeList"
-                :key="index"
-              >
-                {{ pastTheme }}
-              </li>
-            </ul>
-          </div>
+          <v-stepper
+            vertical
+            non-linear
+          >
+            <v-stepper-step
+              editable
+              complete
+              edit-icon="mdi-chevron-right"
+              complete-icon="mdi-chevron-down"
+              step="1"
+            >
+              2019.10 ステキャン発足
+            </v-stepper-step>
+            <v-stepper-content
+              step="1"
+            >
+              <p>
+                普段勉強していることをインプットするだけでなく、アウトプットする場所を作りたい！<br />
+                そんな気持ちから有志を募ってスタートしました。
+              </p>
+            </v-stepper-content>
+            <v-stepper-step
+              editable
+              complete
+              edit-icon="mdi-chevron-right"
+              complete-icon="mdi-chevron-down"
+              step="2"
+            >
+              2019.10 ~ 2020.12 社内勉強会開催
+            </v-stepper-step>
+            <v-stepper-content
+              step="2"
+            >
+              <p>
+                毎月１回のペースで、普段勉強していることや興味のあることをみんなと共有しました。<br />
+                ビジネスよりのことから言語のことまで、様々なテーマがありました。
+                <ul>
+                  <li
+                    class="about-list"
+                    v-for="(pastTheme, index) in pastThemeList"
+                    :key="index"
+                  >
+                    {{ pastTheme }}
+                  </li>
+                </ul>
+              </p>
+            </v-stepper-content>
+            <v-stepper-step
+              editable
+              complete
+              edit-icon="mdi-chevron-right"
+              complete-icon="mdi-chevron-down"
+              step="3"
+            >
+              2021.01 ~ モノづくりを楽しもう！！
+            </v-stepper-step>
+            <v-stepper-content
+              step="3"
+            >
+              <p>
+                定期的に情報発信をすることも大事なことだと思う一方で、<br/>
+                私たちはやはりエンジニア、何かを作ることが楽しくてしょうがない。<br/>
+                その原点に立ち返り、何かを作る → 作ったものをお披露目するというスタンスで活動していくことを決めました。<br/>
+                その第一歩としてこのwebページを作成しました。
+              </p>
+            </v-stepper-content>
+          </v-stepper>
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -50,7 +100,12 @@ export default {
         "Slack活用術",
         "Django入門",
         "etc...",
-        ]
+      ],
+      history: [
+        {
+
+        }
+      ]
     }
   }
 }

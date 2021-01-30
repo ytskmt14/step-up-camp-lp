@@ -5,7 +5,7 @@
   >
     <v-card-text>
       <p class="subtitle-1 font-weight-black white--text">
-        {{ title }}
+        {{ shortDescription }}
       </p>
       <p class="body-2 font-weight-bold white--text">
         {{ description }}
@@ -21,7 +21,7 @@ export default {
       type: String,
       default: "white",
     },
-    title: {
+    shortDescription: {
       type: String,
     },
     description: {
