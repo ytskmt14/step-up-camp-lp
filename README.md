@@ -30,3 +30,5 @@ $ npm run serve
 [ytskmt14](https://github.com/ytskmt14)
 
 [suzaki-kana](https://github.com/suzaki-kana)
+
+[kngmed](https://github.com/kngmed)
