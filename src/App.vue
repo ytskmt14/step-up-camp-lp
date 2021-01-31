@@ -1,9 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="gray darken-4" dark>
       <Header></Header>
-    </v-app-bar>
-
     <v-main>
       <v-container fluid>
         <Top></Top>
