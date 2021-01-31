@@ -1,15 +1,11 @@
 <template>
-  <v-card
-    flat
-    :color="color"
-  >
+  <v-card flat :color="color">
     <v-card-text>
-      <p class="subtitle-1 font-weight-black white--text">
-        {{ shortDescription }}
-      </p>
-      <p class="body-2 font-weight-bold white--text">
-        {{ description }}
-      </p>
+      <p
+        v-html="description"
+        class="body-1 font-weight-bold white--text"
+        style="line-height: 2em"
+      ></p>
     </v-card-text>
   </v-card>
 </template>
@@ -20,9 +16,6 @@ export default {
     color: {
       type: String,
       default: "white",
-    },
-    shortDescription: {
-      type: String,
     },
     description: {
       type: String,

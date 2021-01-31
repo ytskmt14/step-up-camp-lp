@@ -5,11 +5,13 @@
     </v-app-bar>
 
     <v-main>
-      <Top></Top>
-      <About></About>
-      <Works></Works>
-      <Features></Features>
-      <JoinUs></JoinUs>
+      <v-container fluid>
+        <Top></Top>
+        <About></About>
+        <Works></Works>
+        <Features></Features>
+        <JoinUs></JoinUs>
+      </v-container>
     </v-main>
   </v-app>
 </template>

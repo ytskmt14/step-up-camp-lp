@@ -1,42 +1,40 @@
 <template>
-  <div id="joinUs" class="section">
-    <v-container fluid>
-      <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
-      <v-row class="text-center">
-        <v-col>
-          <div class="text-h5 bold mb-10">{{ headingText }}</div>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col
-          v-for="item in items"
-          :key="item.subHeading"
-          class="joinus-column"
-          :style="item.style"
-          xl="3"
-          md="3"
-          sm="6"
-          cols="12"
-        >
-          <v-row class="joinus-column-wrapper" :style="item.subStyle">
-            <v-col >
-              <v-row>
-                <v-col cols="12" class="icon-space">
-                  <v-icon color="white" class="icon" :size="item.size">
-                    {{ item.icon }}
-                  </v-icon>
-                </v-col>
-                <v-col cols="12">
-                  {{ item.subHeading }}
-                </v-col>
-                <v-col class="joinus-column-text">{{ item.text }} </v-col>
-              </v-row>
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+  <section id="joinUs" class="section">
+    <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
+    <v-row class="text-center">
+      <v-col>
+        <div class="text-h5 bold mb-10">{{ headingText }}</div>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col
+        v-for="item in items"
+        :key="item.subHeading"
+        class="joinus-column"
+        :style="item.style"
+        xl="3"
+        md="3"
+        sm="6"
+        cols="12"
+      >
+        <v-row class="joinus-column-wrapper" :style="item.subStyle">
+          <v-col>
+            <v-row>
+              <v-col cols="12" class="icon-space">
+                <v-icon color="white" class="icon" :size="item.size">
+                  {{ item.icon }}
+                </v-icon>
+              </v-col>
+              <v-col cols="12">
+                {{ item.subHeading }}
+              </v-col>
+              <v-col class="joinus-column-text">{{ item.text }} </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+  </section>
 </template>
 <script>
 import SectionHeader from "../module/SectionHeader.vue";
@@ -45,7 +43,7 @@ export default {
   components: {
     SectionHeader,
   },
-  data() {
+  data () {
     return {
       title: "JOIN US",
       subTitle: "メンバー募集",
@@ -56,28 +54,28 @@ export default {
           text: "111111111111111111111111111\r\n22222222222222222",
           icon: "mdi-home",
           size: "5rem",
-          style: {  },
+          style: {},
         },
         {
           subHeading: "仲間が欲しい",
           text: "222222222222222222222222222222",
           icon: "mdi-human-male-male",
           size: "5rem",
-          style: {background:"#E6B660"},
+          style: { background: "#E6B660" },
         },
         {
           subHeading: "ものづくりをしたい",
           text: "3333333333333333333333333333333",
           icon: "mdi-wrench",
           size: "5rem",
-          style: {background:"#25B7C0"},
+          style: { background: "#25B7C0" },
         },
         {
           subHeading: "最新技術を学ぶ",
           text: "44444444444444444444444444444444",
           icon: "mdi-book-open-blank-variant",
           size: "5rem",
-          style: {background:"#091933"},
+          style: { background: "#091933" },
         },
       ],
     };
@@ -86,7 +84,7 @@ export default {
 </script>
 <style scoped>
 .joinus-column:first-child {
-  background:url('~@/assets/joinus_column_img.png');
+  background: url("~@/assets/joinus_column_img.png");
 }
 .joinus-column {
   text-align: center;
@@ -94,7 +92,7 @@ export default {
 }
 .joinus-column-wrapper .col {
   max-width: 300px;
-  margin:0 auto 0 auto;
+  margin: 0 auto 0 auto;
 }
 .joinus-column-wrapper {
   height: 430px;

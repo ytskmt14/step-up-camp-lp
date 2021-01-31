@@ -1,6 +1,5 @@
 <template>
   <section id="works" class="section">
-    <v-container>
       <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
       <v-sheet>
         <v-row style="height: 400px">
@@ -40,7 +39,6 @@
           </v-col>
         </v-row>
       </v-sheet>
-    </v-container>
   </section>
 </template>
 

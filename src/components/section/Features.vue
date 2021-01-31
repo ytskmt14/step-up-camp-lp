@@ -1,26 +1,21 @@
 <template>
   <section id="features" class="section">
-    <v-container>
-      <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
-      <FeaturesContent
-        v-for="feature in featureList"
-        :key="feature.id"
-        :bgColor="feature.bgColor"
-      >
-        <template v-slot:overview>
-          <FeaturesContentOverview
-            :shortDescription="feature.shortDescription"
-          />
-        </template>
-        <template v-slot:description>
-          <FeaturesContentDescription
-            :color="feature.bgColor"
-            :shortDescription="feature.shortDescription"
-            :description="feature.description"
-          />
-        </template>
-      </FeaturesContent>
-    </v-container>
+    <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
+    <FeaturesContent
+      v-for="feature in featureList"
+      :key="feature.id"
+      :bgColor="feature.bgColor"
+    >
+      <template v-slot:overview>
+        <FeaturesContentOverview :shortDescription="feature.shortDescription" />
+      </template>
+      <template v-slot:description>
+        <FeaturesContentDescription
+          :color="feature.bgColor"
+          :description="feature.description"
+        />
+      </template>
+    </FeaturesContent>
   </section>
 </template>
 
@@ -44,8 +39,8 @@ export default {
       featureList: [
         {
           bgColor: '#dfa84e',
-          shortDescription: 'feature1',
-          description: '説明文１',
+          shortDescription: '好きなこと、好きなだけ',
+          description: '普段のお仕事だと、ミスや失敗は怖いもの。<br/>でもここは趣味の世界。ミスや失敗なんていくらしても大丈夫。<br/>全部ネタにしてしまいましょう！<br/>悩んでやらないよりもまず行動！<br/>',
         },
         {
           bgColor: '#3caab2',

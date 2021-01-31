@@ -1,7 +1,7 @@
 <template>
-  <v-container>
+  <section id="header" style="width: 100%">
     <v-row>
-      <v-col md="4">
+      <v-col md="4" justify="center">
         <v-btn
           href="#top"
           text
@@ -11,7 +11,7 @@
         </v-btn>
       </v-col>
       <v-spacer></v-spacer>
-      <v-col align-self="center">
+      <v-col md="2" align-self="center">
         <a
           class="text-center"
           v-for="(section, index) in sectionList"
@@ -23,7 +23,7 @@
         </a>
       </v-col>
     </v-row>
-  </v-container>
+  </section>
 </template>
 
 <script>
