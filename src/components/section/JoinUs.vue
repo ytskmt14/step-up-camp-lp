@@ -17,20 +17,16 @@
         sm="6"
         cols="12"
       >
-        <v-row class="joinus-column-wrapper" :style="item.subStyle">
-          <v-col>
-            <v-row>
-              <v-col cols="12" class="icon-space">
-                <v-icon color="white" class="icon" :size="item.size">
-                  {{ item.icon }}
-                </v-icon>
-              </v-col>
-              <v-col cols="12">
-                {{ item.subHeading }}
-              </v-col>
-              <v-col class="joinus-column-text">{{ item.text }} </v-col>
-            </v-row>
+        <v-row class="joinus-column-wrapper">
+          <v-col cols="12" class="icon-space">
+            <v-icon color="white" class="icon" :size="item.size">
+              {{ item.icon }}
+            </v-icon>
           </v-col>
+          <v-col cols="12">
+            {{ item.subHeading }}
+          </v-col>
+          <v-col cols="12" class="joinus-column-text">{{ item.text }} </v-col>
         </v-row>
       </v-col>
     </v-row>
@@ -43,7 +39,7 @@ export default {
   components: {
     SectionHeader,
   },
-  data () {
+  data() {
     return {
       title: "JOIN US",
       subTitle: "メンバー募集",
