@@ -49,8 +49,8 @@ export default {
         },
         {
           bgColor: '#0a1326',
-          shortDescription: 'feature3',
-          description: '説明文３',
+          shortDescription: 'わからないは、あたりまえ',
+          description: 'はじめての挑戦は「わからない」「できない」のがあたりまえ。<br>ステキャンは挑戦者を応援し「わからない」「できいない」をみんなで共有・解決できる環境です。',
         },
       ]
     }
