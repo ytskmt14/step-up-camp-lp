@@ -18,7 +18,7 @@
       </v-btn>
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
-        @click.stop="drawer = !drawer"
+        @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
     </v-app-bar>
     <!-- ↓↓↓↓ ナビゲーションドロワー ↓↓↓↓ -->
@@ -35,7 +35,7 @@
           :key="index"
           :href="section.id"
           v-smooth-scroll="{ duration: 1000, offset: -75 }"
-          @click.stop="drawer = !drawer"
+          @click="drawer = !drawer"
         >
           <v-list-item-icon>
             <v-icon>{{ section.icon }}</v-icon>
