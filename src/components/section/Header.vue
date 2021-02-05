@@ -1,63 +1,98 @@
 <template>
-  <section id="header" style="width: 100%">
-    <v-row>
-      <v-col md="4" justify="center">
-        <v-btn
-          href="#top"
-          text
-          v-smooth-scroll="{ duration: 1000, offset: -75 }"
-        >
-          Step up camp
-        </v-btn>
-      </v-col>
+  <section id="header">
+    <v-app-bar elevate-on-scroll app color="gray darken-4" dark>
+      <v-btn href="#top" text v-smooth-scroll="{ duration: 1000, offset: -75 }">
+        {{ headerTitle }}
+      </v-btn>
       <v-spacer></v-spacer>
-      <v-col md="2" align-self="center">
-        <a
-          class="text-center"
+      <v-btn
+        class="text-center hidden-sm-and-down"
+        text
+        tile
+        v-for="(section, index) in sectionList"
+        :key="index"
+        :href="section.id"
+        v-smooth-scroll="{ duration: 1000, offset: -75 }"
+      >
+        {{ section.name }}
+      </v-btn>
+      <v-app-bar-nav-icon
+        class="hidden-md-and-up"
+        @click="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+    </v-app-bar>
+    <!-- ↓↓↓↓ ナビゲーションドロワー ↓↓↓↓ -->
+    <v-navigation-drawer dark v-model="drawer" temporary right>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title>{{ navigationTitle }}</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list dense>
+        <v-list-item
           v-for="(section, index) in sectionList"
           :key="index"
           :href="section.id"
           v-smooth-scroll="{ duration: 1000, offset: -75 }"
+          @click="drawer = !drawer"
         >
-          {{ section.name }}
-        </a>
-      </v-col>
-    </v-row>
+          <v-list-item-icon>
+            <v-icon>{{ section.icon }}</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title
+              >{{ section.name }} - {{ section.subName }}</v-list-item-title
+            >
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+    <!-- ↑↑↑↑ ナビゲーションドロワー ↑↑↑↑ -->
   </section>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
+      drawer: false,
+      headerTitle: "STEP UP CAMP",
+      navigationTitle: "NAVIGATION",
       sectionList: [
         {
           name: "About",
-          id: "#about"
+          subName: "ステキャンについて",
+          id: "#about",
+          icon: "mdi-alpha-a-circle",
         },
         {
           name: "Works",
-          id: "#works"
+          subName: "実績紹介",
+          id: "#works",
+          icon: "mdi-alpha-w-circle",
         },
         {
           name: "Features",
-          id: "#features"
+          subName: "特徴紹介 ",
+          id: "#features",
+          icon: "mdi-alpha-f-circle",
         },
         {
           name: "JoinUs",
-          id: "#joinUs"
+          subName: "メンバー募集",
+          id: "#joinUs",
+          icon: "mdi-alpha-j-circle",
         },
-      ]
-    }
-  }
-}
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>
-a {
-  color: white;
-  margin-right: 15px;
-  text-decoration: none;
-  vertical-align: middle;
+.v-navigation-drawer {
+  z-index: 99;
+  position: fixed;
 }
 </style>
