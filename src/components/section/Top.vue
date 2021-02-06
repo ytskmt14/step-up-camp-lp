@@ -1,5 +1,5 @@
 <template>
-  <section id="top" class="section" >
+  <section id="top">
     <v-row align-content="center" justify="center" style="height: 100%;">
       <v-col align-self="center" md="6">
         <div class="text-center text-h1 font-weight-black top-text">

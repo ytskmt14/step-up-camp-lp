@@ -2,10 +2,12 @@
   <v-row
     justify="center"
     align="start"
+    class="mt-5"
   >
     <v-col
       align="start"
-      md="4"
+      xs="4"
+      cols="12"
     >
       <div class="text-center text-h4 font-weight-bold">
         {{ title }}

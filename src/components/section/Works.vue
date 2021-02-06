@@ -1,5 +1,5 @@
 <template>
-  <section id="works" class="section">
+  <section id="works">
       <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
       <v-sheet>
         <v-row style="height: 400px">
@@ -59,43 +59,43 @@ export default {
           id: 1,
           title: "sample title",
           text: "sample text.",
-          imgPath: require("../../assets/work1.jpg"),
-          thumbImgPath: require("../../assets/thumb-work1.jpg"),
+          imgPath: require("@/assets/work1.jpg"),
+          thumbImgPath: require("@/assets/thumb-work1.jpg"),
         },
         {
           id: 2,
           title: "example title",
           text: "example text.",
-          imgPath: require("../..//assets/work2.jpg"),
-          thumbImgPath: require("../../assets/thumb-work2.jpg"),
+          imgPath: require("@//assets/work2.jpg"),
+          thumbImgPath: require("@/assets/thumb-work2.jpg"),
         },
         {
           id: 3,
           title: "sample title",
           text: "sample text.",
-          imgPath: require("../../assets/work1.jpg"),
-          thumbImgPath: require("../../assets/thumb-work1.jpg"),
+          imgPath: require("@/assets/work1.jpg"),
+          thumbImgPath: require("@/assets/thumb-work1.jpg"),
         },
         {
           id: 4,
           title: "sample title",
           text: "sample text.",
-          imgPath: require("../../assets/work2.jpg"),
-          thumbImgPath: require("../../assets/thumb-work2.jpg"),
+          imgPath: require("@/assets/work2.jpg"),
+          thumbImgPath: require("@/assets/thumb-work2.jpg"),
         },
         {
           id: 5,
           title: "sample title",
           text: "sample text.",
-          imgPath: require("../../assets/work1.jpg"),
-          thumbImgPath: require("../../assets/thumb-work1.jpg"),
+          imgPath: require("@/assets/work1.jpg"),
+          thumbImgPath: require("@/assets/thumb-work1.jpg"),
         },
         {
           id: 6,
           title: "sample title",
           text: "sample text.",
-          imgPath: require("../../assets/work2.jpg"),
-          thumbImgPath: require("../../assets/thumb-work2.jpg"),
+          imgPath: require("@/assets/work2.jpg"),
+          thumbImgPath: require("@/assets/thumb-work2.jpg"),
         },
 
       ]

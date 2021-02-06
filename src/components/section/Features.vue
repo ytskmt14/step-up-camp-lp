@@ -1,5 +1,5 @@
 <template>
-  <section id="features" class="section">
+  <section id="features">
     <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
     <FeaturesContent
       v-for="feature in featureList"

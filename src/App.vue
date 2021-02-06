@@ -42,7 +42,5 @@ export default {
 .body {
   background-color: #efefef;
 }
-.section {
-  height: 700px;
-}
+
 </style>
