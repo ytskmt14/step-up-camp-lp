@@ -1,5 +1,5 @@
 <template>
-  <section id="joinUs" class="section">
+  <section id="joinUs">
     <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
     <v-row class="text-center">
       <v-col>
