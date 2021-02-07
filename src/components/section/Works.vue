@@ -14,13 +14,13 @@
             <v-card-title>
               <v-row>
                 <v-col xs="11">
-                  {{ work[model - 1].title }}
+                  <p @click="windowOpen(work[model - 1].deliverableUrl)">
+                    {{ work[model - 1].title }}
+                  </p>
                 </v-col>
                 <v-col xs="1">
                   <v-icon
-                    @click="
-                      windowOpen('https://github.com/ytskmt14/step-up-camp-lp')
-                    "
+                    @click="windowOpen(work[model - 1].githubUrl)"
                   >
                     mdi-github
                   </v-icon>
@@ -99,7 +99,9 @@ export default {
           text: "sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.",
           imgPath: require("@/assets/work1.jpg"),
           thumbImgPath: require("@/assets/thumb-work1.jpg"),
-          techIcons: ['mdi-language-html5', 'mdi-language-css3', 'mdi-vuejs', 'mdi-vuetify']
+          techIcons: ['mdi-language-html5', 'mdi-language-css3', 'mdi-vuejs', 'mdi-vuetify'],
+          deliverableUrl: "https://github.com/ytskmt14",
+          githubUrl: "https://github.com/ytskmt14/step-up-camp-lp",
         },
         {
           id: 2,
