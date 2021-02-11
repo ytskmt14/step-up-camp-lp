@@ -44,8 +44,8 @@ export default {
         },
         {
           bgColor: '#3caab2',
-          shortDescription: 'feature2',
-          description: '説明文２',
+          shortDescription: '純粋に、貪欲に',
+          description: '仕事だから覚える、出来るようになる。<br>それ以外の技術も知識も楽しいものばかり。<br>ひとりのエンジニアとして技術を楽しもう。',
         },
         {
           bgColor: '#0a1326',
