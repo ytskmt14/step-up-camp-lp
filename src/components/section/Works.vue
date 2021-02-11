@@ -13,34 +13,37 @@
           <v-card flat style="height: 100%">
             <v-card-title>
               <v-row>
-                <v-col xs="11">
+                <v-col cols="12">
                   <p @click="windowOpen(work[model - 1].deliverableUrl)">
                     {{ work[model - 1].title }}
+                    <v-icon v-if="work[model - 1].githubUrl" @click="windowOpen(work[model - 1].githubUrl)">
+                      mdi-github
+                    </v-icon>
                   </p>
-                </v-col>
-                <v-col xs="1">
-                  <v-icon
-                    @click="windowOpen(work[model - 1].githubUrl)"
-                  >
-                    mdi-github
-                  </v-icon>
                 </v-col>
               </v-row>
             </v-card-title>
-            <v-card-text>
-              {{ work[model - 1].text }}
-            </v-card-text>
+            <v-card-text v-html="work[model - 1].text"></v-card-text>
             <v-divider></v-divider>
             <v-card-text>
               <div>使用技術</div>
               <div class="mt-2">
-                <v-icon
+                <v-tooltip
+                  bottom
                   v-for="techIcon in work[model - 1].techIcons"
                   :key="techIcon.id"
-                  large
                 >
-                  {{ techIcon }}
-                </v-icon>
+                  <template v-slot:activator="{ on, attrs}">
+                    <v-icon
+                      large
+                      v-bind="attrs"
+                      v-on="on"
+                    >
+                      {{ techIcon.icon }}
+                    </v-icon>
+                  </template>
+                  <span>{{ techIcon.tooltip }}</span>
+                </v-tooltip>
               </div>
             </v-card-text>
             <v-divider></v-divider>
@@ -95,50 +98,35 @@ export default {
       work: [
         {
           id: 1,
-          title: "sample title",
-          text: "sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.sample text.",
+          title: "ステキャン web",
+          text: "ステキャンものづくりの第一歩！<br>ステキャンの紹介ページを作りました。<br>これからたくさんモノづくりをしていきます。",
           imgPath: require("@/assets/work1.jpg"),
           thumbImgPath: require("@/assets/thumb-work1.jpg"),
-          techIcons: ['mdi-language-html5', 'mdi-language-css3', 'mdi-vuejs', 'mdi-vuetify'],
+          techIcons: [
+            {
+              icon: 'mdi-language-html5',
+              tooltip: 'html',
+            },
+            {
+              icon: 'mdi-language-css3',
+              tooltip: 'css',
+            },
+            {
+              icon: 'mdi-vuejs',
+              tooltip: 'Vue.js',
+            },
+            {
+              icon: 'mdi-vuetify',
+              tooltip: 'Vuetify',
+            },
+            {
+              icon: 'mdi-git',
+              tooltip: 'git',
+            },
+          ],
           deliverableUrl: "https://github.com/ytskmt14",
           githubUrl: "https://github.com/ytskmt14/step-up-camp-lp",
         },
-        {
-          id: 2,
-          title: "example title",
-          text: "example text.",
-          imgPath: require("@//assets/work2.jpg"),
-          thumbImgPath: require("@/assets/thumb-work2.jpg"),
-        },
-        {
-          id: 3,
-          title: "sample title",
-          text: "sample text.",
-          imgPath: require("@/assets/work1.jpg"),
-          thumbImgPath: require("@/assets/thumb-work1.jpg"),
-        },
-        {
-          id: 4,
-          title: "sample title",
-          text: "sample text.",
-          imgPath: require("@/assets/work2.jpg"),
-          thumbImgPath: require("@/assets/thumb-work2.jpg"),
-        },
-        {
-          id: 5,
-          title: "sample title",
-          text: "sample text.",
-          imgPath: require("@/assets/work1.jpg"),
-          thumbImgPath: require("@/assets/thumb-work1.jpg"),
-        },
-        {
-          id: 6,
-          title: "sample title",
-          text: "sample text.",
-          imgPath: require("@/assets/work2.jpg"),
-          thumbImgPath: require("@/assets/thumb-work2.jpg"),
-        },
-
       ]
     }
   },
