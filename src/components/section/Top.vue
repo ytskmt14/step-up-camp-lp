@@ -1,24 +1,23 @@
 <template>
   <section id="top">
-    <v-row align-content="center" justify="center" style="height: 100%;">
-      <v-col align-self="center" md="6">
-        <div class="text-center text-h1 font-weight-black top-text">
-          STEP UP CAMP
-        </div>
-        <div class="text-center text-h4 font-weight-black top-text">
-          Pioneer Soft Self Study Group.
-        </div>
+    <v-row align-content="center" justify="center">
+      <v-col align-self="center" cols="12">
+        <v-img class="align-center" src="../../assets/top-img.png">
+          <div class="text-center top-text">
+            <p class="text-h4 text-sm-h3 text-md-h2 text-lg-h1 font-weight-black">
+              STEP UP CAMP
+            </p>
+            <p class="text-subtitle-2 text-sm-h6 text-md-h5 text-lg-h4 font-weight-black">
+              Pioneer Soft Self Study Group.
+            </p>
+          </div>
+        </v-img>
       </v-col>
     </v-row>
   </section>
 </template>
 
 <style scoped>
-#top {
-  background-image: url("~@/assets/top-img.png");
-  background-size: cover;
-}
-
 .top-text {
   color: #f3f1f7;
 }
