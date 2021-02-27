@@ -32,9 +32,12 @@ export default {
     JoinUs,
     Features,
   },
-
-  data: () => ({
-  }),
+  head: {
+    title: {
+      inner: 'Welcome',
+      complement: 'step up camp'
+    }
+  },
 };
 </script>
 
