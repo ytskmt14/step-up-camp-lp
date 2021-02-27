@@ -14,9 +14,18 @@
             <v-card-title>
               <v-row>
                 <v-col cols="12">
-                  <p @click="windowOpen(work[model - 1].deliverableUrl)">
+                  <p
+                    @click="windowOpen(work[model - 1].deliverableUrl)"
+                    style="cursor: pointer"
+                  >
                     {{ work[model - 1].title }}
-                    <v-icon v-if="work[model - 1].githubUrl" @click="windowOpen(work[model - 1].githubUrl)">
+                    <v-divider
+                      vertical
+                    ></v-divider>
+                    <v-icon
+                      v-if="work[model - 1].githubUrl"
+                      @click="windowOpen(work[model - 1].githubUrl)"
+                    >
                       mdi-github
                     </v-icon>
                   </p>
@@ -33,12 +42,8 @@
                   v-for="techIcon in work[model - 1].techIcons"
                   :key="techIcon.id"
                 >
-                  <template v-slot:activator="{ on, attrs}">
-                    <v-icon
-                      large
-                      v-bind="attrs"
-                      v-on="on"
-                    >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-icon large v-bind="attrs" v-on="on">
                       {{ techIcon.icon }}
                     </v-icon>
                   </template>
@@ -100,8 +105,8 @@ export default {
           id: 1,
           title: "ステキャン web",
           text: "ステキャンものづくりの第一歩！<br>ステキャンの紹介ページを作りました。<br>これからたくさんモノづくりをしていきます。",
-          imgPath: require("@/assets/work1.jpg"),
-          thumbImgPath: require("@/assets/thumb-work1.jpg"),
+          imgPath: require("@/assets/step-up-camp-lp.png"),
+          thumbImgPath: require("@/assets/thumb-step-up-camp-lp.png"),
           techIcons: [
             {
               icon: 'mdi-language-html5',
@@ -124,7 +129,7 @@ export default {
               tooltip: 'git',
             },
           ],
-          deliverableUrl: "https://github.com/ytskmt14",
+          deliverableUrl: "https://step-up-camp-572f4.firebaseapp.com/",
           githubUrl: "https://github.com/ytskmt14/step-up-camp-lp",
         },
       ]

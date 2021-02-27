@@ -1,4 +1,8 @@
-on: [push]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   FrontDeploy:
@@ -9,7 +13,7 @@ jobs:
       uses: actions/checkout@master
     - name: setup Node
       uses: actions/setup-node@v1
-      with: 
+      with:
         node-version: 10.x
         registry-url: 'https://registry.npmjs.org'
     - name: Install Dependencies
