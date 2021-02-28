@@ -20,10 +20,10 @@
 </template>
 
 <script>
-const SectionHeader = () => import(/** webpackChunkName: "SectionHeader" */ '../module/SectionHeader.vue');
-const FeaturesContent = () => import(/** webpackChunkName: "FeaturesContent" */ '../module/FeaturesContent.vue');
-const FeaturesContentOverview = () => import(/** webpackChunkName: "FeaturesContentOverView" */ '../module/FeaturesContentOverview.vue');
-const FeaturesContentDescription = () => import(/** webpackChunkName: "FeaturesContentDescription" */ '../module/FeaturesContentDescription.vue');
+const SectionHeader = () => import(/* webpackChunkName: "SectionHeader" */ '../module/SectionHeader.vue');
+const FeaturesContent = () => import(/* webpackChunkName: "FeaturesContent" */ '../module/FeaturesContent.vue');
+const FeaturesContentOverview = () => import(/* webpackChunkName: "FeaturesContentOverView" */ '../module/FeaturesContentOverview.vue');
+const FeaturesContentDescription = () => import(/* webpackChunkName: "FeaturesContentDescription" */ '../module/FeaturesContentDescription.vue');
 
 export default {
   components: {
