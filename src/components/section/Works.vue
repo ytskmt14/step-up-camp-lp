@@ -89,7 +89,7 @@
 </template>
 
 <script>
-const SectionHeader = () => import(/** webpackChunkName: "SectionHeader" */'../module/SectionHeader.vue')
+const SectionHeader = () => import(/* webpackChunkName: "SectionHeader" */'../module/SectionHeader.vue')
 
 export default {
   components: {

@@ -13,7 +13,7 @@
           {{ icon }}
         </v-icon>
       </v-col>
-      <v-col cols="12">
+      <v-col cols="12" class="joinus-column-title">
         <slot name="title"></slot>
       </v-col>
       <v-col cols="12" class="joinus-column-text">
@@ -57,6 +57,9 @@ export default {
   height: 50%;
   word-wrap: anywhere;
   text-align: left;
+}
+.joinus-column-title {
+  font-weight: bold;
 }
 .icon-space {
   height: 180px;
