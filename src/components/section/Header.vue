@@ -1,7 +1,7 @@
 <template>
   <section id="header">
     <v-app-bar elevate-on-scroll app color="gray darken-4" dark>
-      <v-btn href="#top" text>
+      <v-btn to="/" text>
         {{ headerTitle }}
       </v-btn>
       <v-spacer></v-spacer>
@@ -68,14 +68,14 @@ export default {
           name: "About",
           subName: "ステキャンについて",
           icon: "mdi-alpha-a-circle",
-          link: "/About",
+          link: "/about",
         },
 
         {
           name: "Contact",
           subName: "お問い合わせ ",
           icon: "mdi-alpha-f-circle",
-          link: "Contact",
+          link: "contact",
         },
       ],
     };
