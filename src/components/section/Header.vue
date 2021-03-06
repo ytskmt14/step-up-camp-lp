@@ -1,7 +1,7 @@
 <template>
   <section id="header">
     <v-app-bar elevate-on-scroll app color="gray darken-4" dark>
-      <v-btn to="/" text>
+      <v-btn :to="{name: 'top'}" text>
         {{ headerTitle }}
       </v-btn>
       <v-spacer></v-spacer>
@@ -75,7 +75,7 @@ export default {
           name: "Contact",
           subName: "お問い合わせ ",
           icon: "mdi-alpha-f-circle",
-          link: "contact",
+          link: "/contact",
         },
       ],
     };
