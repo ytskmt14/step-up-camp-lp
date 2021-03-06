@@ -1,7 +1,7 @@
 <template>
   <section id="header">
     <v-app-bar elevate-on-scroll app color="gray darken-4" dark>
-      <v-btn href="#top" text v-smooth-scroll="{ duration: 1000, offset: -75 }">
+      <v-btn :to="{name: 'top'}" text>
         {{ headerTitle }}
       </v-btn>
       <v-spacer></v-spacer>
@@ -11,8 +11,7 @@
         tile
         v-for="(section, index) in sectionList"
         :key="index"
-        :href="section.id"
-        v-smooth-scroll="{ duration: 1000, offset: -75 }"
+        :to="section.link"
       >
         {{ section.name }}
       </v-btn>
@@ -34,7 +33,6 @@
           v-for="(section, index) in sectionList"
           :key="index"
           :href="section.id"
-          v-smooth-scroll="{ duration: 1000, offset: -75 }"
           @click="drawer = !drawer"
         >
           <v-list-item-icon>
@@ -61,28 +59,23 @@ export default {
       navigationTitle: "NAVIGATION",
       sectionList: [
         {
+          name: "Top",
+          subName: "トップページ",
+          icon: "mdi-alpha-w-circle",
+          link: "/",
+        },
+        {
           name: "About",
           subName: "ステキャンについて",
-          id: "#about",
           icon: "mdi-alpha-a-circle",
+          link: "/about",
         },
+
         {
-          name: "Works",
-          subName: "実績紹介",
-          id: "#works",
-          icon: "mdi-alpha-w-circle",
-        },
-        {
-          name: "Features",
-          subName: "特徴紹介 ",
-          id: "#features",
+          name: "Contact",
+          subName: "お問い合わせ ",
           icon: "mdi-alpha-f-circle",
-        },
-        {
-          name: "JoinUs",
-          subName: "メンバー募集",
-          id: "#joinUs",
-          icon: "mdi-alpha-j-circle",
+          link: "/contact",
         },
       ],
     };
