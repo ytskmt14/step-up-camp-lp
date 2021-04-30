@@ -1,9 +1,9 @@
 <template>
-  <v-footer color="primary lighten-1" padless>
-    <v-row>
-      <v-col class="primary lighten-2 py-4 text-center white--text" cols="12">
+  <v-footer dark padless class="mt-4">
+    <v-card class="flex" flat tile>
+      <v-card-text class="py-2 white--text text-center">
         {{ new Date().getFullYear() }} — <strong>step-up camp</strong>
-      </v-col>
-    </v-row>
+      </v-card-text>
+    </v-card>
   </v-footer>
 </template>

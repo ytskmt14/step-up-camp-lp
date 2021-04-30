@@ -1,20 +1,23 @@
 <template>
   <section id="header">
     <v-app-bar elevate-on-scroll app color="gray darken-4" dark>
-      <v-btn :to="{name: 'top'}" text>
-        {{ headerTitle }}
-      </v-btn>
+      <v-toolbar-items>
+        <v-btn text :to="{name: 'top'}">
+          {{ headerTitle }}
+        </v-btn>
+      </v-toolbar-items>
       <v-spacer></v-spacer>
-      <v-btn
-        class="text-center hidden-sm-and-down"
-        text
-        tile
-        v-for="(section, index) in sectionList"
-        :key="index"
-        :to="section.link"
-      >
-        {{ section.name }}
-      </v-btn>
+      <v-toolbar-items>
+        <v-btn
+          class="text-center hidden-sm-and-down"
+          text
+          v-for="(section, index) in sectionList"
+          :key="index"
+          :to="{name: section.link}"
+        >
+          {{ section.name }}
+        </v-btn>
+      </v-toolbar-items>
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
         @click="drawer = !drawer"
@@ -62,20 +65,20 @@ export default {
           name: "Top",
           subName: "トップページ",
           icon: "mdi-alpha-w-circle",
-          link: "/",
+          link: "top",
         },
         {
           name: "About",
           subName: "ステキャンについて",
           icon: "mdi-alpha-a-circle",
-          link: "/about",
+          link: "about",
         },
 
         {
           name: "Contact",
           subName: "お問い合わせ ",
           icon: "mdi-alpha-f-circle",
-          link: "/contact",
+          link: "contact",
         },
       ],
     };
