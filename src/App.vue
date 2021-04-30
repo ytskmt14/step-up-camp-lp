@@ -1,22 +1,25 @@
 <template>
   <v-app>
-      <Header></Header>
+    <Header/>
     <v-main>
       <v-container fluid>
       <router-view/>
       </v-container>
     </v-main>
+    <Footer/>
   </v-app>
 </template>
 
 <script>
-const Header = () => import(/* webpackChunkName: "Header" */ './components/section/Header.vue');
+const Header = () => import(/* webpackChunkName: "Header" */ './components/section/Header');
+const Footer = () => import(/* webpackChunkName: "Footer" */ './components/section/Footer');
 
 export default {
   name: 'App',
 
   components: {
-    Header
+    Header,
+    Footer
   },
   head: {
     title: {
