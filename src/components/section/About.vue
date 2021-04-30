@@ -9,7 +9,7 @@
       </v-col>
     </v-row>
     <v-row class="mt-5" justify="center">
-      <v-col cols="12">
+      <v-col cols="10" offset="1">
         <v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
           <v-timeline-item>
             <v-card class="d-flex flex-column">
