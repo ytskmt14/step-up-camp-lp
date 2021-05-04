@@ -11,8 +11,8 @@
 </template>
 
 <script>
-const Header = () => import(/* webpackChunkName: "Header" */ './components/section/Header');
-const Footer = () => import(/* webpackChunkName: "Footer" */ './components/section/Footer');
+const Header = () => import(/* webpackChunkName: "Header" */ './components/organisms/Header');
+const Footer = () => import(/* webpackChunkName: "Footer" */ './components/organisms/Footer');
 
 export default {
   name: 'App',

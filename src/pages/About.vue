@@ -112,6 +112,7 @@
         </v-timeline>
       </v-col>
     </v-row>
+    
     <SectionHeader class="mb-5" title="Features" subTitle="特徴紹介" />
     <FeaturesContent
       v-for="feature in featureList"
@@ -133,18 +134,18 @@
 
 <script>
 const SectionHeader = () =>
-  import(/* webpackChunkName: "SectionHeader" */ "../module/SectionHeader.vue");
+  import(/* webpackChunkName: "SectionHeader" */ "../components/molecules/SectionHeader");
 const FeaturesContent = () =>
   import(
-    /* webpackChunkName: "FeaturesContent" */ "../module/FeaturesContent.vue"
+    /* webpackChunkName: "FeaturesContent" */ "../components/molecules/FeaturesContent"
   );
 const FeaturesContentOverview = () =>
   import(
-    /* webpackChunkName: "FeaturesContentOverView" */ "../module/FeaturesContentOverview.vue"
+    /* webpackChunkName: "FeaturesContentOverView" */ "../components/molecules/FeaturesContentOverview"
   );
 const FeaturesContentDescription = () =>
   import(
-    /* webpackChunkName: "FeaturesContentDescription" */ "../module/FeaturesContentDescription.vue"
+    /* webpackChunkName: "FeaturesContentDescription" */ "../components/molecules/FeaturesContentDescription"
   );
 
 export default {

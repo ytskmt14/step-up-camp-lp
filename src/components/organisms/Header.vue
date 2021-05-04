@@ -1,22 +1,14 @@
 <template>
   <section id="header">
     <v-app-bar elevate-on-scroll app color="gray darken-4" dark>
-      <v-toolbar-items>
-        <v-btn text :to="{name: 'top'}">
-          {{ headerTitle }}
-        </v-btn>
-      </v-toolbar-items>
+      <HeaderLogo />
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn
-          class="text-center hidden-sm-and-down"
-          text
-          v-for="(section, index) in sectionList"
+        <HeaderMenu
+          v-for="(page, index) in pageList"
           :key="index"
-          :to="{name: section.link}"
-        >
-          {{ section.name }}
-        </v-btn>
+          :page="page"
+        />
       </v-toolbar-items>
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
@@ -24,7 +16,7 @@
       ></v-app-bar-nav-icon>
     </v-app-bar>
     <!-- ↓↓↓↓ ナビゲーションドロワー ↓↓↓↓ -->
-    <v-navigation-drawer dark v-model="drawer" temporary right>
+    <v-navigation-drawer v-model="drawer" dark temporary right>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title>{{ navigationTitle }}</v-list-item-title>
@@ -33,17 +25,17 @@
       <v-divider></v-divider>
       <v-list dense>
         <v-list-item
-          v-for="(section, index) in sectionList"
+          v-for="(page, index) in pageList"
           :key="index"
-          :href="section.id"
+          :to="{ name: page.link }"
           @click="drawer = !drawer"
         >
           <v-list-item-icon>
-            <v-icon>{{ section.icon }}</v-icon>
+            <v-icon>{{ page.icon }}</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title
-              >{{ section.name }} - {{ section.subName }}</v-list-item-title
+              >{{ page.name }} - {{ page.subName }}</v-list-item-title
             >
           </v-list-item-content>
         </v-list-item>
@@ -54,13 +46,21 @@
 </template>
 
 <script>
+const HeaderLogo = () =>
+  import(/* webpackChunkName: "HeaderLogo" */ "../atoms/HeaderLogo");
+const HeaderMenu = () =>
+  import(/* webpackChunkName: "HeaderMenu" */ "../molecules/HeaderMenu");
+
 export default {
+  components: {
+    HeaderLogo,
+    HeaderMenu,
+  },
   data() {
     return {
       drawer: false,
-      headerTitle: "STEP UP CAMP",
       navigationTitle: "NAVIGATION",
-      sectionList: [
+      pageList: [
         {
           name: "Top",
           subName: "トップページ",
@@ -73,7 +73,6 @@ export default {
           icon: "mdi-alpha-a-circle",
           link: "about",
         },
-
         {
           name: "Contact",
           subName: "お問い合わせ ",
