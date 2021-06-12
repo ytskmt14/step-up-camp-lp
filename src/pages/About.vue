@@ -133,18 +133,18 @@
 
 <script>
 const SectionHeader = () =>
-  import(/* webpackChunkName: "SectionHeader" */ "../module/SectionHeader.vue");
+  import(/* webpackChunkName: "SectionHeader" */ "../components/common/SectionHeader");
 const FeaturesContent = () =>
   import(
-    /* webpackChunkName: "FeaturesContent" */ "../module/FeaturesContent.vue"
+    /* webpackChunkName: "FeaturesContent" */ "../components/about/FeaturesContent"
   );
 const FeaturesContentOverview = () =>
   import(
-    /* webpackChunkName: "FeaturesContentOverView" */ "../module/FeaturesContentOverview.vue"
+    /* webpackChunkName: "FeaturesContentOverView" */ "../components/about//FeaturesContentOverview.vue"
   );
 const FeaturesContentDescription = () =>
   import(
-    /* webpackChunkName: "FeaturesContentDescription" */ "../module/FeaturesContentDescription.vue"
+    /* webpackChunkName: "FeaturesContentDescription" */ "../components/about//FeaturesContentDescription.vue"
   );
 
 export default {

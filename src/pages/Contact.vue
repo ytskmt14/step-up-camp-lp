@@ -56,8 +56,8 @@
   </section>
 </template>
 <script>
-const SectionHeader = () => import(/* webpackChunkName: "SectionHeader" */ '../module/SectionHeader.vue');
-const JoinUsContents = () => import(/* webpackChunkName: "JoinUsContents" */ '../module/JoinUsContents.vue');
+const SectionHeader = () => import(/* webpackChunkName: "SectionHeader" */ '../components/common/SectionHeader');
+const JoinUsContents = () => import(/* webpackChunkName: "JoinUsContents" */ '../components/contact/JoinUsContents');
 
 export default {
   components: {
