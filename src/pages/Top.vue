@@ -2,7 +2,7 @@
   <section id="top">
     <v-row align-content="center" justify="center">
       <v-col align-self="center" cols="10">
-        <v-img class="align-center" src="../../assets/top-img.png">
+        <v-img class="align-center" src="@/assets/top-img.png">
           <div class="text-center top-text">
             <p class="text-h4 text-sm-h3 text-md-h2 text-lg-h1 font-weight-black">
               STEP UP CAMP
@@ -110,7 +110,7 @@
 
 <script>
 const SectionHeader = () =>
-  import(/* webpackChunkName: "SectionHeader" */ "../module/SectionHeader.vue");
+  import(/* webpackChunkName: "SectionHeader" */ "../components/common/SectionHeader");
 
 export default {
   components: {

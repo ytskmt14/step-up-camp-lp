@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-const Top = () => import('../components/section/Top.vue');
-const About = () => import( '../components/section/About.vue');
-const Contact = () => import('../components/section/Contact.vue');
+const Top = () => import('../pages/Top');
+const About = () => import( '../pages/About');
+const Contact = () => import('../pages/Contact');
 
 Vue.use(VueRouter)
 
