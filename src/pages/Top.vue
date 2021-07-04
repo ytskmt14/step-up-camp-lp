@@ -1,116 +1,152 @@
 <template>
-  <section id="top">
-    <v-row align-content="center" justify="center">
-      <v-col align-self="center" cols="10">
-        <v-img class="align-center" src="@/assets/top-img.png">
-          <div class="text-center top-text">
-            <p class="text-h4 text-sm-h3 text-md-h2 text-lg-h1 font-weight-black">
-              STEP UP CAMP
-            </p>
-            <v-row align-content="center" justify="center">
-              <v-col cols="6" offset="3" sm="8" offset-sm="2">
-                <vue-typed-js
-                  :strings="['enjoy', 'learn']"
-                  :loop="true"
-                  :smartBackspace="true"
-                >
-                  <h2>Let's <span class="typing"></span> tech with us!!</h2>
-                </vue-typed-js>
-              </v-col>
-            </v-row>
-          </div>
-        </v-img>
-      </v-col>
-    </v-row>
-    <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
-    <v-sheet>
-      <v-row>
-        <v-col
-          cols="12"
-          xs="12"
-          md="3"
-          offset-md="2"
-          :order="$vuetify.breakpoint.smAndDown ? 2 : 1"
-        >
-          <v-card flat style="height: 100%">
-            <v-card-title>
-              <v-row>
-                <v-col cols="12">
-                  <p
-                    @click="windowOpen(work[model - 1].deliverableUrl)"
-                    style="cursor: pointer"
+  <v-main>
+    <section id="top">
+      <v-row no-gutters>
+        <v-img :height="'calc(100vh - 100px)'" src="@/assets/top-img.png">
+          <v-theme-provider dark>
+            <v-container fill-height>
+              <v-row
+                align="center"
+                class="white--text mx-auto"
+                justify="center"
+              >
+                <v-col class="white--text text-center" cols="12" tag="h1">
+                  <span
+                    :class="[
+                      $vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2',
+                    ]"
+                    class="font-weight-light"
+                    >WELCOME TO</span
                   >
-                    {{ work[model - 1].title }}
-                    <v-divider vertical></v-divider>
-                    <v-icon
-                      v-if="work[model - 1].githubUrl"
-                      @click="windowOpen(work[model - 1].githubUrl)"
-                    >
-                      mdi-github
-                    </v-icon>
-                  </p>
+                  <br />
+                  <span
+                    :class="[
+                      $vuetify.breakpoint.smAndDown ? 'display-3' : 'display-4']"
+                    class="font-weight-black"
+                  >
+                    STEP UP CAMP
+                  </span>
+                  <vue-typed-js
+                    :strings="[
+                      'Let\'s enjoy tech with us!!',
+                      'Let\'s learn tech with us!!',
+                    ]"
+                    :loop="true"
+                    :smartBackspace="true"
+                  >
+                    <span :class="[
+                      $vuetify.breakpoint.smAndDown ? 'display-1' : 'display-1']"
+                    class="typing font-weight-light mt-4"></span>
+                  </vue-typed-js>
+                  <v-btn 
+                    class="align-self-end mt-12"
+                    fab
+                    outlined
+                    @click="$vuetify.goTo('#works')"
+                  >
+                    <v-icon>mdi-chevron-double-down</v-icon>
+                  </v-btn>
                 </v-col>
               </v-row>
-            </v-card-title>
-            <v-card-text v-html="work[model - 1].text"></v-card-text>
-            <v-divider></v-divider>
-            <v-card-text>
-              <div>使用技術</div>
-              <div class="mt-2">
-                <v-tooltip
-                  bottom
-                  v-for="techIcon in work[model - 1].techIcons"
-                  :key="techIcon.id"
-                >
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-icon large v-bind="attrs" v-on="on">
-                      {{ techIcon.icon }}
-                    </v-icon>
-                  </template>
-                  <span>{{ techIcon.tooltip }}</span>
-                </v-tooltip>
-              </div>
-            </v-card-text>
-            <v-divider></v-divider>
-          </v-card>
-        </v-col>
-        <v-col
-          cols="12"
-          xs="12"
-          md="5"
-          :order="$vuetify.breakpoint.smAndDown ? 1 : 2"
-        >
-          <v-img :src="work[model - 1].imgPath" position="center" />
-        </v-col>
+            </v-container>
+          </v-theme-provider>
+        </v-img>
       </v-row>
-      <v-row>
-        <v-col md="8" offset-md="2">
-          <v-slide-group
-            v-model="model"
-            prev-icon="mdi-arrow-left-circle"
-            next-icon="mdi-arrow-right-circle"
-            show-arrows
+    </section>
+    <section id="works">
+      <div class="py-12"></div>
+      <SectionHeader class="mb-5" :title="title" :subTitle="subTitle" />
+      <v-sheet>
+        <v-row>
+          <v-col
+            cols="12"
+            xs="12"
+            md="3"
+            offset-md="2"
+            :order="$vuetify.breakpoint.smAndDown ? 2 : 1"
           >
-            <v-slide-item v-for="n in work.length" :key="n">
-              <v-sheet class="ma-4">
-                <v-img
-                  contain
-                  :src="work[n - 1].thumbImgPath"
-                  max-height="175px;"
-                  @click="onCardClick(n)"
-                />
-              </v-sheet>
-            </v-slide-item>
-          </v-slide-group>
-        </v-col>
-      </v-row>
-    </v-sheet>
-  </section>
+            <v-card flat style="height: 100%">
+              <v-card-title>
+                <v-row>
+                  <v-col cols="12">
+                    <p
+                      @click="windowOpen(work[model - 1].deliverableUrl)"
+                      style="cursor: pointer"
+                    >
+                      {{ work[model - 1].title }}
+                      <v-divider vertical></v-divider>
+                      <v-icon
+                        v-if="work[model - 1].githubUrl"
+                        @click="windowOpen(work[model - 1].githubUrl)"
+                      >
+                        mdi-github
+                      </v-icon>
+                    </p>
+                  </v-col>
+                </v-row>
+              </v-card-title>
+              <v-card-text v-html="work[model - 1].text"></v-card-text>
+              <v-divider></v-divider>
+              <v-card-text>
+                <div>使用技術</div>
+                <div class="mt-2">
+                  <v-tooltip
+                    bottom
+                    v-for="techIcon in work[model - 1].techIcons"
+                    :key="techIcon.id"
+                  >
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-icon large v-bind="attrs" v-on="on">
+                        {{ techIcon.icon }}
+                      </v-icon>
+                    </template>
+                    <span>{{ techIcon.tooltip }}</span>
+                  </v-tooltip>
+                </div>
+              </v-card-text>
+              <v-divider></v-divider>
+            </v-card>
+          </v-col>
+          <v-col
+            cols="12"
+            xs="12"
+            md="5"
+            :order="$vuetify.breakpoint.smAndDown ? 1 : 2"
+          >
+            <v-img :src="work[model - 1].imgPath" position="center" />
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col md="8" offset-md="2">
+            <v-slide-group
+              v-model="model"
+              prev-icon="mdi-arrow-left-circle"
+              next-icon="mdi-arrow-right-circle"
+              show-arrows
+            >
+              <v-slide-item v-for="n in work.length" :key="n">
+                <v-sheet class="ma-4">
+                  <v-img
+                    contain
+                    :src="work[n - 1].thumbImgPath"
+                    max-height="175px;"
+                    @click="onCardClick(n)"
+                  />
+                </v-sheet>
+              </v-slide-item>
+            </v-slide-group>
+          </v-col>
+        </v-row>
+      </v-sheet>
+    </section>
+  </v-main>
 </template>
 
 <script>
 const SectionHeader = () =>
-  import(/* webpackChunkName: "SectionHeader" */ "../components/common/SectionHeader");
+  import(
+    /* webpackChunkName: "SectionHeader" */ "../components/common/SectionHeader"
+  );
 
 export default {
   components: {
@@ -125,8 +161,7 @@ export default {
         {
           id: 1,
           title: "ステキャン web",
-          text:
-            "ステキャンものづくりの第一歩！<br>ステキャンの紹介ページを作りました。<br>これからたくさんモノづくりをしていきます。",
+          text: "ステキャンものづくりの第一歩！<br>ステキャンの紹介ページを作りました。<br>これからたくさんモノづくりをしていきます。",
           imgPath: require("@/assets/step-up-camp-lp.png"),
           thumbImgPath: require("@/assets/thumb-step-up-camp-lp.png"),
           techIcons: [
@@ -171,5 +206,14 @@ export default {
 <style scoped>
 .top-text {
   color: #f3f1f7;
+}
+.col {
+  padding: 0px;
+}
+.container {
+  padding: 0px;
+}
+.typed-element {
+  display: inherit;
 }
 </style>

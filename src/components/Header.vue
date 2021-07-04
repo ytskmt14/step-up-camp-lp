@@ -1,19 +1,21 @@
 <template>
-  <section id="header">
-    <v-app-bar elevate-on-scroll app color="gray darken-4" dark>
-      <v-toolbar-items>
-        <v-btn text :to="{name: 'top'}">
-          {{ headerTitle }}
-        </v-btn>
-      </v-toolbar-items>
+  <div>
+    <v-app-bar height="100" app color="gray darken-4" dark>
+      <v-app-bar-title>
+        <v-img src="@/assets/title.svg" 
+        contain
+
+        height="65"
+        ></v-img></v-app-bar-title
+      >
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn
           class="text-center hidden-sm-and-down"
           text
-          v-for="(section, index) in sectionList"
-          :key="index"
-          :to="{name: section.link}"
+          v-for="section in sectionList"
+          :key="section.name"
+          :to="section.link"
         >
           {{ section.name }}
         </v-btn>
@@ -33,9 +35,9 @@
       <v-divider></v-divider>
       <v-list dense>
         <v-list-item
-          v-for="(section, index) in sectionList"
-          :key="index"
-          :href="section.id"
+          v-for="section in sectionList"
+          :key="section.name"
+          :to="section.link"
           @click="drawer = !drawer"
         >
           <v-list-item-icon>
@@ -50,7 +52,7 @@
       </v-list>
     </v-navigation-drawer>
     <!-- ↑↑↑↑ ナビゲーションドロワー ↑↑↑↑ -->
-  </section>
+  </div>
 </template>
 
 <script>
@@ -65,7 +67,7 @@ export default {
           name: "Top",
           subName: "トップページ",
           icon: "mdi-alpha-w-circle",
-          link: "top",
+          link: "/",
         },
         {
           name: "About",
