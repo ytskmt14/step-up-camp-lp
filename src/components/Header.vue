@@ -1,12 +1,13 @@
 <template>
   <div>
     <v-app-bar height="100" app color="gray darken-4" dark>
-      <v-app-bar-title>
-        <v-img src="@/assets/title.svg" 
-        contain
-
-        height="65"
-        ></v-img></v-app-bar-title
+      
+        <router-link :style="$vuetify.breakpoint.smAndDown ? 'width:100px'  : 'width:100px;margin-left:60px'" to="/">
+          <v-img
+            src="@/assets/title.svg"
+            contain
+            height="65"
+          ></v-img></router-link
       >
       <v-spacer></v-spacer>
       <v-toolbar-items>
@@ -66,20 +67,20 @@ export default {
         {
           name: "Top",
           subName: "トップページ",
-          icon: "mdi-alpha-w-circle",
+          icon: "mdi-arrow-up-bold-outline",
           link: "/",
         },
         {
           name: "About",
           subName: "ステキャンについて",
-          icon: "mdi-alpha-a-circle",
+          icon: "mdi-star",
           link: "about",
         },
 
         {
           name: "Contact",
           subName: "お問い合わせ ",
-          icon: "mdi-alpha-f-circle",
+          icon: "mdi-email",
           link: "contact",
         },
       ],
@@ -93,4 +94,8 @@ export default {
   z-index: 99;
   position: fixed;
 }
+.v-responsive__content .v-app-bar-title__content{
+  width: 140px;
+}
+
 </style>

@@ -11,35 +11,35 @@
                 justify="center"
               >
                 <v-col class="white--text text-center" cols="12" tag="h1">
-                  <span
+                  <div
                     :class="[
-                      $vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2',
+                      $vuetify.breakpoint.smAndDown ? 'display-1 mb-2'  : 'display-2 mb-7',
                     ]"
                     class="font-weight-light"
-                    >WELCOME TO</span
-                  >
-                  <br />
-                  <span
+                    >WELCOME TO</div>
+             
+                  <div
                     :class="[
-                      $vuetify.breakpoint.smAndDown ? 'display-3' : 'display-4']"
+                      $vuetify.breakpoint.smAndDown ? 'display-3 mb-2' : 'display-4 mb-7']"
                     class="font-weight-black"
                   >
                     STEP UP CAMP
-                  </span>
+                  </div>
                   <vue-typed-js
                     :strings="[
                       'Let\'s enjoy tech with us!!',
                       'Let\'s learn tech with us!!',
                     ]"
                     :loop="true"
-                    :smartBackspace="true"
                   >
                     <span :class="[
-                      $vuetify.breakpoint.smAndDown ? 'display-1' : 'display-1']"
-                    class="typing font-weight-light mt-4"></span>
+                      $vuetify.breakpoint.smAndDown ? 'display-0' : 'display-2']"
+                    class="typing font-weight-light"></span>
                   </vue-typed-js>
                   <v-btn 
-                    class="align-self-end mt-12"
+                  :class="[
+                      $vuetify.breakpoint.smAndDown ? 'display-3 mt-12' : 'display-4 mt-15']"
+                    class="align-self-end "
                     fab
                     outlined
                     @click="$vuetify.goTo('#works')"
