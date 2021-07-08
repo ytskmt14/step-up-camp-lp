@@ -2,7 +2,7 @@
   <v-main>
     <section id="contact" class="pt-6">
       <SectionHeader class="mb-5" title="CONTACT" subTitle="お問い合わせ" />
-      <div style="margin: 0 auto; max-width: 800px; text-align: center">
+      <div class="mx-auto text-center" style="max-width: 800px;">
         <p>
           「<Policy />」をご確認の上、よろしければ「送信」ボタンをクリックしてください。
         </p>
@@ -28,10 +28,6 @@ export default {
   components: {
     SectionHeader,
     Policy,
-  },
-  data() {
-    return {};
-  },
-  methods: {},
+  }
 };
 </script>

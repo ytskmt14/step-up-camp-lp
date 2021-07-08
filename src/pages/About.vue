@@ -2,7 +2,7 @@
   <v-main>
     <section id="about" class="grey lighten-3 pt-6">
       <SectionHeader title="About" subTitle="ステキャンについて" />
-      <p style="text-align: center">
+      <p class="text-center">
         ステキャンとは、ステップアップキャンプの略です。<br />
         いちエンジニアとして、技術を楽しんでいく場所であり、<br />
         互いに情報を共有することで、ひとつずつできること・わかることを増やしていける場所です。
@@ -11,7 +11,7 @@
     </section>
     <section>
       <div class="text-center text-h5 mb-3 mt-3">ステキャンの軌跡</div>
-      <v-timeline style="max-width: 860px; margin: 0 auto">
+      <v-timeline class="mx-auto" style="max-width: 860px;">
         <v-timeline-item
           v-for="(year, i) in years"
           :key="i"
