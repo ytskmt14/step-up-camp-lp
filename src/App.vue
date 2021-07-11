@@ -11,17 +11,28 @@ const Header = () => import(/* webpackChunkName: "Header" */ './components/Heade
 const Footer = () => import(/* webpackChunkName: "Footer" */ './components/Footer');
 
 export default {
-  name: 'App',
-
+  name: "App",
   components: {
     Header,
     Footer
   },
   head: {
     title: {
-      inner: 'Welcome',
-      complement: 'step up camp'
-    }
+      inner: "Welcome",
+      complement: "step up camp",
+    },
+    script: [
+      {
+        type: "text/javascript",
+        src: "src=https://www.googletagmanager.com/gtag/js?id=G-SWYJ0FYSTR",
+        async: true,
+      },
+      {
+        type: "text/javascript",
+        inner:
+          "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-SWYJ0FYSTR');",
+      },
+    ],
   },
 };
 </script>
@@ -30,5 +41,4 @@ export default {
 .body {
   background-color: #efefef;
 }
-
 </style>
